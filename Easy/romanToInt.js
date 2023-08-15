@@ -13,10 +13,9 @@ var romanToInt = function(s) {
         M: 1000
     }
     let count = 0
-    let nextCharVal
     for(let i=0; i < s.length; i++){
         let currentCharVal = romanMap[s.charAt(i)];
-        i !== s.length ? nextCharVal = romanMap[s.charAt(i+1)]: null
+        let nextCharVal = romanMap[s.charAt(i+1)]
         if(nextCharVal > currentCharVal){
             count += (nextCharVal - currentCharVal)
             i++
@@ -26,5 +25,3 @@ var romanToInt = function(s) {
     }
     return count
 };
-
-console.log(romanToInt('IX'))
